@@ -1,0 +1,23 @@
+
+
+1. numpy as n
+def LCS(S, N, T, M, dp) :
+    if (N == 0 or M == 0) :
+        return 0;
+    if (dp[N][M] != 0) :
+        return dp[N][M];
+    if (S[N - 1] == T[M - 1]) :
+        dp[N][M] = 1 + LCS(S, N - 1, T, M - 1, dp);
+        return dp[N][M
+    dp[N][M] = max( LCS(S, N - 1, T, M, dp), LCS(S, N, T, M - 1,
+      return dp[N][M]
+def minimumCharacter(S) :
+    T = "abcdefghijklmnopqrstuvwxyz";
+    N = len(S); M = len(T);
+    dp = np.zeros((N + 1, M + 1));
+    return (26 - LCS(S, N, T, M, dp));
+if __name__ == "__main__" :
+ 
+    S = "abcdadc";
+    print(minimumCharacter(S));
+
